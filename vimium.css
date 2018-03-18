@@ -1,0 +1,189 @@
+div > .vimiumHintMarker {
+    background: #F9BF1C;
+    border: 1px solid #966408;
+}
+
+div > .vimiumHintMarker span {
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+div > .vimiumHintMarker > .matchingCharacter {
+    color: #B3802E;
+}
+
+#vomnibar {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 4px 40px rgba(50, 50, 50, 0.55);
+    top: 30px;
+    max-width: 650px;
+    width: calc(100% - 62px);
+
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+#vomnibar .vomnibarSearchArea {
+    background: none;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+}
+
+#vomnibar input {
+    background-color: #fafafa;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    color: #404040;
+    font-size: 18px;
+    height: 45px;
+    margin: 0;
+    outline: none;
+    padding: 0 15px;
+    vertical-align: middle;
+}
+
+#vomnibar ul {
+    padding: 4px 0;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid #E8E8E8;
+}
+
+#vomnibar li {
+    border: 1px solid transparent;
+    padding: 7px 15px 6px 15px;
+}
+
+#vomnibar li:not(:first-of-type):before {
+    content: '';
+    position: absolute;
+
+    background: radial-gradient(#E8E8E8 50%, white 70%);
+    left: 0;
+    right: 0;
+
+    /* XXX Based on border space reserved */
+    top: -1px;
+    height: 1px;
+}
+
+/* Font family */
+#vomnibar li > div.vomnibarTopHalf > span.vomnibarTitle,
+#vomnibar li > div.vomnibarBottomHalf > span.vomnibarUrl,
+#vomnibar input {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Placement for each line half */
+#vomnibar li > div.vomnibarTopHalf,
+#vomnibar li > div.vomnibarBottomHalf {
+    display: flex;
+    padding: 0;
+    height: 18px; /* XXX Should match line-height */
+}
+
+/* Title and URL */
+#vomnibar li > div.vomnibarTopHalf > span.vomnibarTitle,
+#vomnibar li > div.vomnibarBottomHalf > span.vomnibarUrl {
+    -webkit-mask: linear-gradient(to left, transparent, black 10%);
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px; /* XXX Should match line-height */
+    margin: 0;
+    white-space: nowrap;
+    width: 100%;
+}
+
+#vomnibar li > div.vomnibarTopHalf > span.vomnibarTitle,
+#vomnibar li > div.vomnibarTopHalf > span.vomnibarTitle .vomnibarMatch {
+    color: #282828;
+}
+
+#vomnibar li > div.vomnibarBottomHalf > span.vomnibarUrl,
+#vomnibar li > div.vomnibarBottomHalf > span.vomnibarUrl .vomnibarMatch {
+    color: #225DBD;
+}
+
+/* Tags */
+/* XXX Font dependent */
+#vomnibar li > div.vomnibarTopHalf > span.vomnibarSource:nth-of-type(2) {
+    order: -1;
+
+    /* Tag style */
+    background-color: #666;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    color: #f0f0f0;
+    font-size: 14px;
+    font-variant: small-caps;
+    font-weight: 500;
+
+    /* Tag size and text placement */
+    /* XXX Font dependent */
+    line-height: 14px;
+    padding: 0px 4px 2px 4px;
+
+    /* Fixed height */
+    height: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+/* Tags and icons are fixed width and have right margin */
+#vomnibar li > div > span.vomnibarSource {
+    flex-shrink: 0;
+    margin-right: 0.7ch;
+}
+
+/* Hidden icons take no space */
+#vomnibar li > div > span.vomnibarSource.vomnibarNoInsertText {
+    display: none !important;
+}
+
+/* Icon vertical placement */
+/* XXX Font dependent */
+#vomnibar li > div.vomnibarTopHalf > span.vomnibarSource:nth-of-type(1),
+#vomnibar li > div.vomnibarBottomHalf > span.vomnibarSource:nth-of-type(1) {
+    padding-top: 5px;
+    line-height: calc(18px - 5px);
+}
+
+/* Selected styles */
+
+#vomnibar li.vomnibarSelected {
+    background-color: #585858;
+}
+
+#vomnibar li.vomnibarSelected > div.vomnibarTopHalf > span.vomnibarTitle {
+    color: #EAEAEA;
+}
+
+#vomnibar li.vomnibarSelected > div.vomnibarBottomHalf > span.vomnibarUrl {
+    color: #BDBDBD;
+}
+
+#vomnibar li.vomnibarSelected > div.vomnibarTopHalf > span.vomnibarTitle .vomnibarMatch {
+    color: white;
+}
+
+#vomnibar li.vomnibarSelected > div.vomnibarBottomHalf > span.vomnibarUrl .vomnibarMatch {
+    color: #F5F5F5;
+}
+
+#vomnibar li.vomnibarSelected > div.vomnibarTopHalf > span.vomnibarSource:nth-of-type(2) {
+    background: #DDD;
+    /* border: 1px solid #8E8E8E; */
+    color: #333;
+}
+
+#vomnibar li.vomnibarSelected > div.vomnibarTopHalf > span.vomnibarSource:nth-of-type(1),
+#vomnibar li.vomnibarSelected > div.vomnibarBottomHalf > span.vomnibarSource:nth-of-type(1) {
+    color: #8E8E8E;
+}
+
